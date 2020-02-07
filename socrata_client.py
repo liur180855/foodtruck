@@ -19,6 +19,9 @@ class SocrataClient:
                        f"and start24 <= '{time_opened}' " \
                        f"and '{time_opened}' <= end24"
 
-        return self.client.get(self.food_truck_endpoint, limit=self.LOOP_SIZE, offset=self.LOOP_SIZE * page,
-                               select="applicant, location, start24, end24, dayofweekstr", order="applicant ASC",
+        return self.client.get(self.food_truck_endpoint,
+                               limit=self.LOOP_SIZE,
+                               offset=self.LOOP_SIZE * page,
+                               select="applicant, location, start24, end24, dayofweekstr",
+                               order="applicant ASC",
                                where=where_clause)

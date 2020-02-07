@@ -18,6 +18,9 @@ class FoodTruck:
         result = []
         for food_truck in food_trucks:
             result.append(
-                FoodTruck(food_truck['applicant'], food_truck['location'], food_truck['start24'],
-                          food_truck['end24'], food_truck['dayofweekstr']))
+                FoodTruck(food_truck['applicant'],
+                          food_truck['location'],
+                          food_truck['start24'],
+                          food_truck['end24'],
+                          food_truck['dayofweekstr']))
         return result
