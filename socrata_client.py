@@ -17,7 +17,7 @@ class SocrataClient:
     def get_food_truck_in_alphabetical_order(self, weekday_opened: str, time_opened: str, page: int = 0) -> list:
         where_clause = f"dayofweekstr = '{weekday_opened}' " \
                        f"and start24 <= '{time_opened}' " \
-                       f"and '{time_opened}' <= end24"
+                       f"and '{time_opened}' < end24"
 
         return self.client.get(self.food_truck_endpoint,
                                limit=self.LOOP_SIZE,
